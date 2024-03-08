@@ -66,3 +66,8 @@ Route::get('userpost/chat',[PostController::class,'userchat'])->name('userget.ch
 //create.blade.phpの登録ボタン押下時のルート設定----------------//
 Route::post('user/store',[PostController::class, 'userStoreAction'])->name('user.store.action');
 Route::get('user/store',[PostController::class, 'userStoreAction'])->name('user.create.action');
+
+//create_kousin.blade.phpの更新ボタン押下時のルート設定---------//
+Route::get('post/create_kousin',[PostController::class,'edit'])->name('create.edit');
+// Route::post('post/create_kousin',[PostController::class,'postupdate'])->name('create.postupdate');
+Route::patch('post/create_kousin',[PostController::class,'update'])->name('create.update');
