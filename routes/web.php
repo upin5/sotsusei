@@ -71,3 +71,45 @@ Route::get('user/store',[PostController::class, 'userStoreAction'])->name('user.
 Route::get('post/create_kousin',[PostController::class,'edit'])->name('create.edit');
 // Route::post('post/create_kousin',[PostController::class,'postupdate'])->name('create.postupdate');
 Route::patch('post/create_kousin',[PostController::class,'update'])->name('create.update');
+
+// create02へ遷移するためのルート-----------------------------//
+Route::get('/create02',[PostController::class,'jumpcreate02'])->name('jump.create02');
+
+// create02のAI判定クリック時のデータベース登録ルート----------//
+Route::post('/create02',[PostController::class,'userstore02'])->name('user.store02');
+
+
+// chatgptをcreate02で利用するためのルート-----------------------------------------------------------//
+//chatgpt 本番ルート設定---------------------------------------//
+Route::get('create02/chat',[PostController::class,'userchat02'])->name('usercreate02.chat');
+Route::post('create02/chat',[PostController::class,'userchat02'])->name('usercreate02.post.chat');
+Route::post('userpost02/chat',[PostController::class,'userchat02'])->name('userpost02.chat');
+Route::get('userpost02/chat',[PostController::class,'userchat02'])->name('userget02.chat');
+//--------------------------------------------------------------------------------------------------//
+
+//create02_kousin.blade.phpの更新ボタン押下時のルート設定---------------------------------------------//
+Route::get('post/create02_kousin',[PostController::class,'edit02'])->name('create02.edit');
+// Route::post('post/create_kousin',[PostController::class,'postupdate'])->name('create.postupdate');
+Route::patch('post/create02_kousin',[PostController::class,'update02'])->name('create02.update');
+//--------------------------------------------------------------------------------------------------//
+
+// create02へ遷移するためのルート-----------------------------//
+Route::get('/create_soukatsu',[PostController::class,'jumpcreatesoukatsu'])->name('jump.createsoukatsu');
+
+// chatgptをcreate_soukatsuで利用するためのルート-----------------------------------------------------------//
+//chatgpt 本番ルート設定---------------------------------------//
+Route::get('create_soukatsu/chat',[PostController::class,'userchat03'])->name('usercreate03.chat');
+Route::post('create_soukatsu/chat',[PostController::class,'userchat03'])->name('usercreate03.post.chat');
+Route::post('userpost_soukatsu/chat',[PostController::class,'userchat03'])->name('userpost03.chat');
+Route::get('userpost?soukatsu/chat',[PostController::class,'userchat03'])->name('userget03.chat');
+//--------------------------------------------------------------------------------------------------//
+
+//honburequestからchatgptに処理を投げるためのルート設定--------//
+Route::post('honbucreate/chat',[PostController::class,'process'])->name('process.chat');
+Route::get('honbucreate/chat',[PostController::class,'process'])->name('process.get.chat');
+//----------------------------------------------------------//
+
+//honbucreateからchatgptの回答を検索にかけるためのルート設定-----//
+Route::post('honbucreate/index',[PostController::class,'index'])->name('index.post');
+Route::get('honbucreate/index',[PostController::class,'index'])->name('index.get');
+//------------------------------------------------------------//

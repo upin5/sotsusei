@@ -29,44 +29,39 @@
 
 
     {{-- ↓chatgptに投げるコード ---------------------------------------------}}
-    <form method="post" action="{{route('create.update')}}">
+    <form method="post" action="{{route('userpost02.chat')}}">
     {{----------------------------------------------------------------------}}
     @csrf
-    @method('patch')
         <div class="w-full flex flex-col">
-            <label for="body" class="font-semibold mt-4">質問：あなたが今一番得意と思うことは何ですか？またその活用場面があれば教えてください。</label>
-            <textarea name="body" class="w-auto py-2 border border-gray-300 rounded-md" id="body" cols="30" rows="5">
-            @if(session('inputText'))
-            {{session('inputText')}}
+            <label for="body02" class="font-semibold mt-4">質問2:スキルを活用する場面で工夫したことは何ですか？また工夫した理由が知りたいです。</label>
+            <textarea name="body02" class="w-auto py-2 border border-gray-300 rounded-md" id="body02" cols="30" rows="5">
+            @if(session('inputText02'))
+            {{session('inputText02')}}
             @endif 
 
             </textarea>
             {{-- <input type="hidden" id="previousBody" name="previousBody" value="{{ old('previousBody') }}"> --}}
         </div>
-        
+
         <x-primary-button class="mt-4">
-            更新する
+            AI判定
         </x-primary-button>
         {{-- <x-primary-button class="mt-4" id="clearChat">
             削除する
         </x-primary-button> --}}
-        
     </form>
-    <a href="{{route('jump.create02')}}" class="mt-4">
-        <x-primary-button class="mt-4">
-            次の質問
-        </x-primary-button>
-         </a>
-    {{-- <form method="post" action="{{route('user.store.action')}}">
+    <form method="post" action="{{route('user.store02')}}">
     @csrf
         {{-- ↓登録するを押下するとデータベースに自身の入力値"body"とchatgptの$message[content]を保存する処理をcontrollerに追加する 2/26記 --}}
         {{--　データベースにカラム追加する必要あり 2/26記 --}}
-       
+        {{-- <x-primary-button type="submit" class="mt-4">
+            更新する
+        </x-primary-button>
         {{----------------------------------------------------------------------------------------------------------------------}}
 
         {{-- <p class="font-semibold">更新するをクリックすると最新の入力内容が登録されます</p> --}}
 
-    {{-- </form> --}}
+    </form>
       {{--ChatGPTの回答を表示 ------------------------------------------------------------}}
       @isset($messages)
       <div id="chat-contents">
@@ -80,8 +75,6 @@
       {{---------------------------------------------------------------------------------}}
 </div>
 
-
-
       {{-- <script>
         document.addEventListener("DOMContentLoaded", function(){
             var previousTextAreaValue = document.getElementById("body").value;
@@ -93,7 +86,7 @@
 
 
       {{-- clearchatを押したときに内容を消す処理 ------------------------------------------}}
-      {{-- <script>
+      <script>
         document.addEventListener("DOMContentLoaded", function() {
         // clearChatボタンのクリックイベントを監視------------------------------------------//
         document.getElementById("clearChat").addEventListener("click", function() {
@@ -101,7 +94,7 @@
         document.getElementById("chat-contents").innerHTML = "";
     });
 });
-      </script> --}}
+      </script>
       {{---------------------------------------------------------------------------------}}
     
 </x-app-layout>
