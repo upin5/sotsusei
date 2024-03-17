@@ -32,21 +32,41 @@
             <label for="selected_words">基本スキル</label>
             <select name="selected_words" id="selected_words" class="p-2 w-48">
                 <option>計算が得意</option>
-                <option>文章が得意</option>
-                <option>説明が得意</option>
+                <option>文章を作成することが得意</option>
+                <option>教育をすることが得意</option>
                 <option>絵を描くことが得意</option>
+                <option>ITスキルがある</option>
+                <option>接客をすることが得意</option>
+                <option>商品の取り扱いが得意</option>
+                
             </select>
         </div>
     
         <div class="mt-4 ml-4">
             <label for="selected_words_2">業務への活用例</label>
             <select name="selected_words_2" id="selected_words_2" class="p-2 w-48">
-                <option>予算を作成</option>
-                <option>資料を作成</option>
-                <option>教育をする</option>
-                <option>ポップを作る</option>
+                <option>予算を編成</option>
+                <option>プレゼン資料を作成</option>
+                <option>従業員に教育をする</option>
+                <option>店頭のポップを作る</option>
+                <option>アプリケーション作成</option>
+                <option>特定の商品を販売</option>
+                <option>商品プロモーション</option>     
             </select>
         </div>
+
+        {{-- <div class="mt-4 ml-4">
+            <label for="selected_words_4">補助スキル</label>
+            <select name="selected_words_4" id="selected_words_4" class="p-2 w-48">
+                <option>自己管理能力が高い</option>
+                <option>マネジメントスキルがある</option>
+                <option>仕事に工夫をする</option>
+                <option>人との関わりを大事にする</option>
+                <opiton>柔軟性のある思考ができる</opiton>
+                <option>計画性がある</option>
+            </select>
+        </div> --}}
+
 
         <div class="mt-4 ml-4">
             <label for="selected_words_3">内面の特性</label>
@@ -55,6 +75,9 @@
                 <option>積極的</option>
                 <option>創造的</option>
                 <option>明るい</option>
+                <option>緻密</option>
+                <option>丁寧</option>
+                <option>リーダーシップ</option>
             </select>
 
 

@@ -14,13 +14,18 @@
             <p>検索結果はありません</p>
         
         @else
-            <ul>
-                @foreach($results as $result)
+        @foreach($results as $result)
+            <li>
+                {{-- @foreach($results as $result)
                 <li>
                     <strong>{{ $result }}</strong>
                 </li>
+                @endforeach --}}
+                @foreach($result as $item)
+                {{ $item }}
                 @endforeach
-            </ul>
+            </li>
+        @endforeach
         @endif
     </div>
     

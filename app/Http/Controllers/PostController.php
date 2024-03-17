@@ -519,6 +519,7 @@ public function userchat03(){
                                     $selected_words = $request->input('selected_words');
                                     $selected_words_2 = $request->input('selected_words_2');
                                     $selected_words_3 = $request->input('selected_words_3');
+                                    // $selected_words_4 = $request->input('selected_words_4');
                                     $honbubody = $request->input('honbubody');
                             
                                     // ChatGPTにデータを渡す処理----------------------------------------------------------//
@@ -564,13 +565,23 @@ public function userchat03(){
 public function index(Request $request)
 {
     $honbubody02 = $request->input('honbubody02');
-    $results = soukatsu::where('gpt_text', 'like', '%' . $honbubody02 . '%')->get();
+    $results = soukatsu::whereRaw("MATCH(gpt_text) AGAINST(? IN BOOLEAN MODE)", [$honbubody02])
+    ->take(3)
+    ->get();
+
+    //最低でも
+    // if ($results->isEmpty()) {
+    //     $fallbackResult = soukatsu::inRandomOrder()->first();
+    //     $results->push($fallbackResult);
+    // }
+
+
 
     $formattedResults = $results->map(function($result){
-        // $user = User::find($result->id);
+        $user = User::find($result->user_id);
         return[
             'gpt_text' => $result->gpt_text,
-            // 'user_name' => $user ? $user->name : 'Unknown User'
+            'user_name' => $user ? $user->name : 'Unknown User'
         ];
     });
 
