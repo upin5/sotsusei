@@ -15,16 +15,18 @@
         
         @else
         @foreach($results as $result)
-            <li>
+        
+            {{-- <li> --}}
                 {{-- @foreach($results as $result)
                 <li>
                     <strong>{{ $result }}</strong>
                 </li>
                 @endforeach --}}
-                @foreach($result as $item)
-                {{ $item }}
-                @endforeach
-            </li>
+                <textarea style="width: 100%; height:100%; background-color:lemonchiffon" rows="5">@foreach($result as $item) {{ $item }}
+                    @endforeach
+                </textarea>
+            {{-- </li> --}}
+        
         @endforeach
         @endif
     </div>

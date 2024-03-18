@@ -541,7 +541,7 @@ public function userchat03(){
                                                     ['role' => 'system', 'content' => "このチャットは日本語での人物評価を行います。"],
                                                     ['role' => 'user', 'content' => $prompt],
                                                 ],
-                                                'temperature' => 0.5, // クリエイティビティの度合い
+                                                'temperature' => 0.3, // クリエイティビティの度合い
                                                 'max_tokens' => 500, // 最大トークン数
                                                 'top_p' => 1,
                                                 'frequency_penalty' => 0,

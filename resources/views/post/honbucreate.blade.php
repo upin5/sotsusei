@@ -31,7 +31,7 @@
         <div class="mt-4 ml-4">
             <label for="selected_words">基本スキル</label>
             <select name="selected_words" id="selected_words" class="p-2 w-48">
-                <option>計算が得意</option>
+                <option>計算能力が優れている</option>
                 <option>文章を作成することが得意</option>
                 <option>教育をすることが得意</option>
                 <option>絵を描くことが得意</option>

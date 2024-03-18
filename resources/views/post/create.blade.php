@@ -63,8 +63,11 @@
 
     </form>
       {{--ChatGPTの回答を表示 ------------------------------------------------------------}}
+      
+      
       @isset($messages)
       <div id="chat-contents">
+       
           @foreach($messages as $message)
               <div>
                  {{ $message['title'] }}: {{ $message['content'] }}
@@ -72,6 +75,8 @@
           @endforeach
       </div>
       @endisset
+    
+      
       {{---------------------------------------------------------------------------------}}
 </div>
 

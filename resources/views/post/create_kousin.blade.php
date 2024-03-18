@@ -52,7 +52,7 @@
         </x-primary-button> --}}
         
     </form>
-    <a href="{{route('jump.create02')}}" class="mt-4">
+    <a href="{{route('jump.create02')}}" class="mt-4 mb-4">
         <x-primary-button class="mt-4">
             次の質問
         </x-primary-button>
@@ -68,15 +68,20 @@
 
     {{-- </form> --}}
       {{--ChatGPTの回答を表示 ------------------------------------------------------------}}
+      
       @isset($messages)
-      <div id="chat-contents">
+      
+      <div id="chat-contents">  
           @foreach($messages as $message)
               <div>
-                 {{ $message['title'] }}: {{ $message['content'] }}
+                <textarea style="width:100%; height:auto; background-color:pink; border:none;"> {{ $message['title'] }}: {{ $message['content'] }}
+                </textarea>
               </div>
           @endforeach
       </div>
+     
       @endisset
+    
       {{---------------------------------------------------------------------------------}}
 </div>
 
