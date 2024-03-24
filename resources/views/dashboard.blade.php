@@ -18,6 +18,7 @@
             </div> --}}
         {{-- </div> --}}
     {{-- </div> --}}
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <div class="flex justify-center mt-10">
     <div class="w-1/3 h-1/2 bg-white shadow-lg sm:rounded-xl mr-2 cursor-pointer" id="jumptocreate" onclick="redirectToJumptocreate()">
         <p class="font-bold text-2xl mt-2 ml-2">自分登録</p>
