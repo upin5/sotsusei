@@ -17,11 +17,11 @@
                     </x-nav-link> -->
                     <!-- メニューバーに投稿ページへ遷移する処理を埋め込む -->
                     <x-nav-link :href="route('post.create')" :active="request()->routeIs('post.create')">
-                        店舗従業員
+                        自分登録
                     </x-nav-link>
                     
                     <x-nav-link :href="route('post.honbucreate')" :active="request()->routeIs('post.honbucreate')">
-                        本部（部署）
+                        スカウト
                     </x-nav-link>
                     <!-------------------------------------------------->
 
