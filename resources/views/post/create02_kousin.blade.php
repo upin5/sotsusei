@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            リクエスト
+            自分登録 Step2_AIサポート
         </h2>
     </x-slot>
     {{-- ユーザーが自分の答えを見つけ出すまでの道筋をimgで表示する ------------}}
@@ -26,7 +26,9 @@
     <p>{{ $latestUserRequest->body}}</p>
     @endif --}}
 
-
+    <div class="flex items-center">
+        <img src="{{asset('img/step2.png')}}">
+        </div>
 
     {{-- ↓chatgptに投げるコード ---------------------------------------------}}
     <form method="post" action="{{route('create02.update')}}">
@@ -54,7 +56,7 @@
     </form>
     <a href="{{route('jump.createsoukatsu')}}">
     <x-primary-button  class="mt-4">
-        次の質問
+        総括
     </x-primary-button>
     </a>
     {{-- <form method="post" action="{{route('user.store.action')}}">
@@ -72,7 +74,8 @@
       <div id="chat-contents">
           @foreach($messages as $message)
               <div>
-                 {{ $message['title'] }}: {{ $message['content'] }}
+                 <textarea style="width:100%; height:auto; background-color:pink; border:none;">{{ $message['title'] }}: {{ $message['content'] }}
+                 </textarea>
               </div>
           @endforeach
       </div>

@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            リクエスト
+            自分登録 Step3
         </h2>
     </x-slot>
     {{-- ユーザーが自分の答えを見つけ出すまでの道筋をimgで表示する ------------}}
@@ -32,6 +32,9 @@
     </div>
     @endif
     </div>
+    <div class="flex items-center">
+        <img src="{{asset('img/step3.png')}}">
+        </div>
     {{-- ↓chatgptに投げるコード ---------------------------------------------}}
     <form id="evaluationForm" method="get" action="{{route('usercreate03.chat')}}">
     {{----------------------------------------------------------------------}}

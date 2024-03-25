@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            リクエスト
+            自分登録 Step1_AIサポート
         </h2>
     </x-slot>
     {{-- ユーザーが自分の答えを見つけ出すまでの道筋をimgで表示する ------------}}
@@ -26,7 +26,9 @@
     <p>{{ $latestUserRequest->body}}</p>
     @endif --}}
 
-
+    <div class="flex items-center">
+        <img src="{{asset('img/step1.png')}}">
+        </div>
 
     {{-- ↓chatgptに投げるコード ---------------------------------------------}}
     <form method="post" action="{{route('create.update')}}">
