@@ -33,7 +33,7 @@
     @endif
     </div>
     <div class="flex items-center">
-        <img src="{{asset('img/step3.png')}}">
+        <img src="{{asset('img/new_step3.png')}}">
         </div>
     {{-- ↓chatgptに投げるコード ---------------------------------------------}}
     <form id="evaluationForm" method="get" action="{{route('usercreate03.chat')}}">

@@ -26,7 +26,7 @@
     <p>{{ $latestUserRequest->body}}</p>
     @endif --}}
     <div class="flex items-center">
-    <img src="{{asset('img/step1.png')}}">
+    <img src="{{asset('img/new_step1.png')}}">
     </div>
 
     {{-- ↓chatgptに投げるコード ---------------------------------------------}}

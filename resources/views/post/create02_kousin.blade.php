@@ -27,7 +27,7 @@
     @endif --}}
 
     <div class="flex items-center">
-        <img src="{{asset('img/step2.png')}}">
+        <img src="{{asset('img/new_step2.png')}}">
         </div>
 
     {{-- ↓chatgptに投げるコード ---------------------------------------------}}
